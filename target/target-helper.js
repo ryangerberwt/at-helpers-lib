@@ -5,12 +5,14 @@ var _logObject = {
 };
 var _targetErrors;
 var _satellite;
+var _adobeObject;
 let waitForJquery = setInterval(function() {
   if (window.jQuery !== undefined) {
     console.log("jQuery has loaded");
     clearInterval(waitForJquery);
     $ = jQuery;
     console.log("target-helper.js is up");
+    _adobeObject = adobe;
     //Usage: $().checkForNullOrEmpty(myVar)
     $.fn.checkForNullOrEmpty = function(varToCheck) {
       if ($.isPlainObject(varToCheck)) {
@@ -320,7 +322,29 @@ let waitForJquery = setInterval(function() {
         return false;
       }
     };
+
+    //Usage: $().addTracking({myMboxObject})
+    $.fn.addTracking = function(mboxObject){
+
+      if(!$().checkForNullOrEmpty(mboxObject)){
+        try{
+          _adobeObject.trackEvent({mboxObject});
+        }catch(ex){
+          console.error(ex);
+          console.log('thrown by addTracking');
+          return false;
+        }
+        return true;
+      }else{
+        return false;
+      }
+
+    }
+
+
   } else {
     console.log("waiting for jquery");
   }
 }, 500);
+
+
