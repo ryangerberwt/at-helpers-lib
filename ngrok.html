@@ -44,6 +44,10 @@
                     console.log('Disclaimers as pulled from LS');
                     var ls = $().lsGet("3.0_disclaimers")
                     console.dir(ls);
+                    $('body').on('click',theLib.addTracking({
+                        "mboxName":"testMbox",
+                        "params":{"someParameter": "someValue"}
+                      }));
 
                 }
             }, 1000)
