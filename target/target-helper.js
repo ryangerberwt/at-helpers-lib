@@ -12,7 +12,7 @@ let waitForJquery = setInterval(function() {
     clearInterval(waitForJquery);
     $ = jQuery;
     console.log("target-helper.js is up");
-    _adobeObject = adobe;
+    _adobeObject = adobe.target;
     //Usage: $().checkForNullOrEmpty(myVar)
     $.fn.checkForNullOrEmpty = function(varToCheck) {
       if ($.isPlainObject(varToCheck)) {
