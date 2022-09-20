@@ -671,3 +671,44 @@ $().lsAdd('cookiesName', 'avalueforcookie');
 
 <br>
 <br>
+
+
+<u>
+    <b>
+        Add tracking
+    </b>
+</u>
+<br> 
+<br> 
+<i>
+<u><b>Purpose of method:</b></u>
+<br>
+Adds target tracking
+</i>
+<br>
+
+<code>
+<br> 
+$().addTracking(mboxObject)
+
+<pre>
+    
+    returns boolean
+
+
+    Example Parameters:
+    mboxObject : (Object) 
+
+    Example Values:
+    mboxObject: {"mboxName" : myMbox, "params":{"someParameter":"someValue"}}
+
+</pre>
+
+//Example:
+<br>
+$().addTracking({"mboxName" : myMbox, "params":{"someParameter":"someValue"}})
+
+</code>
+
+<br>
+<br>
